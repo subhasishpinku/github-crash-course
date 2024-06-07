@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ulearning_flutter_riverpod/common/global_loader/global_loader.dart';
-import 'package:ulearning_flutter_riverpod/common/services/http_util.dart';
 import 'package:ulearning_flutter_riverpod/common/utils/constants.dart';
 import 'package:ulearning_flutter_riverpod/features/sign_in/provider/sign_in_notifier.dart';
 import 'package:ulearning_flutter_riverpod/features/sign_in/repo/sigin_in_repo.dart';
@@ -110,7 +109,6 @@ class SignInController {
       //try to remember user info
       Global.storageService.setString(AppConstants.STORAGE_USER_PROFILE_KEY, jsonEncode(result.data));
       Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, result.data!.access_token!);
-
       navKey.currentState?.pushNamedAndRemoveUntil("/application", (route) => false);
 
     }catch(e){

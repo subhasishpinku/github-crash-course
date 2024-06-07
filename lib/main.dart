@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,10 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_flutter_riverpod/common/routes/routes.dart';
 import 'package:ulearning_flutter_riverpod/common/services/http_util.dart';
 import 'package:ulearning_flutter_riverpod/common/utils/app_styles.dart';
-import 'package:ulearning_flutter_riverpod/common/utils/constants.dart';
-
 import 'global.dart';
-
 Future<void> main() async {
   await Global.init();
   var obj1 = HttpUtil();
@@ -35,9 +31,7 @@ Future<void> main() async {
   }
   runApp(const ProviderScope(child: MyApp()));
 }
-
 final GlobalKey<NavigatorState> navKey = GlobalKey<NavigatorState>();
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
